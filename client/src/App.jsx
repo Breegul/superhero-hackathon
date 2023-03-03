@@ -1,6 +1,6 @@
 import React, { useState } from 'react'
 import { Routes, Route } from 'react-router-dom'
-import { SearchPage, HomePage } from '../pages'
+import { SearchPage, HomePage, HeroesPage } from '../pages'
 import { Nav } from '../components'
 import '../assets/app.css';
 
@@ -11,6 +11,7 @@ function App() {
       <Route path="/" element={<Nav />}>
         <Route index element={<HomePage />} />
         <Route path="/search" element={<SearchPage />} />
+        <Route path="/Heroes" element={<HeroesPage />}/>
       </Route>
     </Routes>
 

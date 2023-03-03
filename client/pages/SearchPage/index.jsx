@@ -30,8 +30,8 @@ const SearchPage = () => {
             {loading? "": results.map(e=>
             <HeroCard 
                 key={e.id} id={e.id} hero_name={e.name} 
-                powerstats={e.powerstats} full_name={e.biography.full-name} 
-                publisher={e.biography.publisher} image={e.image}
+                powerstats={e.powerstats} full_name={e.biography["full-name"]} 
+                publisher={e.biography.publisher} image={e.image.url}
                 votes={0}
             />)}
         </div>

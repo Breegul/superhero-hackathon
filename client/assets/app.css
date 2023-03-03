@@ -7,7 +7,8 @@ body {
     line-height: 1.6;
     font-size: 24px;
     color: #2B061E;
-    background:#D9BFC0;;
+    background: rgb(238,174,202);
+    background: radial-gradient(circle, rgba(238,174,202,1) 0%, rgba(148,187,233,1) 100%);
 }
 
 #root {

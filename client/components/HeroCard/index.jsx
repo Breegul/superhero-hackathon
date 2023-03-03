@@ -4,6 +4,16 @@ import React from 'react';
 
 const HeroCard = ({ id, hero_name, powerstats, full_name, publisher, image, votes, vote, deleteHero }) => {
 
+    let stats = []
+
+    for (e in powerstats) {
+        stats.push(
+            <li>
+                {e}: {powerstats[e]}
+            </li>
+        )
+    }
+
 
     return (
 
@@ -11,9 +21,7 @@ const HeroCard = ({ id, hero_name, powerstats, full_name, publisher, image, vote
             <p className='hero_name'> {hero_name} </p>
             <div className='power_stats'>
                 <ul>
-                    {powerstats.array.forEach((e) => {
-                        return <li>{e}</li>
-                    })}
+                    {stats.map((e) => e)}
                 </ul>
             </div>
             <p className='full_name'> {full_name}</p>

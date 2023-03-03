@@ -21,7 +21,9 @@ const HeroCard = ({ id, hero_name, powerstats, full_name, publisher, image, vote
             <p className='hero_name'> {hero_name} </p>
             <div className='power_stats'>
                 <ul>
+
                     {stats.map((e) => e)}
+
                 </ul>
             </div>
             <p className='full_name'> {full_name}</p>

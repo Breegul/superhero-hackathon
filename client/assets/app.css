@@ -67,3 +67,7 @@ form button:hover {
     background: #2B061E;
     color: white;
 }
+
+h1 {
+    text-align:center;
+}

@@ -3,7 +3,7 @@ import React from 'react';
 import './style.css'
 
 
-const HeroCard = ({ id, hero_name, powerstats, full_name, publisher, image, votes, vote, deleteHero }) => {
+const HeroCard = ({ id, hero_name, powerstats, full_name, publisher, image, votes, vote }) => {
 
     let stats = []
 
@@ -34,7 +34,6 @@ const HeroCard = ({ id, hero_name, powerstats, full_name, publisher, image, vote
             <div className='button-wrapper'>
                 <button className='vote_button' onClick={() => vote(id, 1)}> add a vote </button>
                 <button className='vote_button' onClick={() => vote(id, -1)}>remove a vote</button>
-                <button className='delete_button' onClick={() => { deleteHero(id); }} >Delete</button>
             </div>
         </div >
     )

@@ -21,8 +21,11 @@ const SearchPage = () => {
     setLoading(false)
   }
 
+
+
   return (
     <div>
+      <h1> Search for your hero</h1>
       <form>
         <input type="text" name="search" id="search" onChange={handleInput} />
         <input type="submit" value="search" onClick={handleSubmit} />

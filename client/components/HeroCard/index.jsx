@@ -9,11 +9,13 @@ const HeroCard = ({ id, hero_name, powerstats, full_name, publisher, image, vote
 
         <div className='hero-card'>
             <p className='hero_name'> {hero_name} </p>
-            <p className='power_stats'>
+            <div className='power_stats'>
                 <ul>
-                    {powerstats.map((e, i) => (<li key={i}>{e}</li>))}
+                    {powerstats.array.forEach((e) => {
+                        return <li>{e}</li>
+                    })}
                 </ul>
-            </p>
+            </div>
             <p className='full_name'> {full_name}</p>
             <p className='publisher'> {publisher}</p>
             <p><span className="votes-counter">Votes: {votes}</span></p>

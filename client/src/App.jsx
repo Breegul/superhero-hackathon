@@ -1,6 +1,6 @@
 import React, { useState } from 'react'
 import { Routes, Route } from 'react-router-dom'
-import { SearchPage, HomePage, HeroesPage } from '../pages'
+import { SearchPage, HomePage, HeroesPage, NotFound } from '../pages'
 import { Nav } from '../components'
 
 function App() {
@@ -11,6 +11,7 @@ function App() {
         <Route index element={<HomePage />} />
         <Route path="/search" element={<SearchPage />} />
         <Route path="/Heroes" element={<HeroesPage />}/>
+        <Route path="*" element={<NotFound />}/>
       </Route>
     </Routes>
 

@@ -1,10 +1,11 @@
 
 import React from 'react';
 import './style.css'
+import { useHero } from '../../contexts';
 
 
-const HeroCard = ({ id, hero_name, powerstats, full_name, publisher, image, votes, vote, deleteHero }) => {
-
+const HeroCard = ({ id, hero_name, powerstats, full_name, publisher, image, addHero, votes, vote, deleteHero }) => {
+    const { heroes } = useHero();
     let stats = []
 
     for (let e in powerstats) {
@@ -31,12 +32,18 @@ const HeroCard = ({ id, hero_name, powerstats, full_name, publisher, image, vote
             <p className='publisher'>publisher: {publisher}</p>
             <p><span className="votes-counter">Votes: {votes}</span></p>
             <img src={image} />
-            <div className='button-wrapper'>
-                <button className='vote_button' onClick={() => vote(id, 1)}> add a vote </button>
-                <button className='vote_button' onClick={() => vote(id, -1)}>remove a vote</button>
-                <button className='delete_button' onClick={() => { deleteHero(id); }} >Delete</button>
-            </div>
-        </div >
+            {addHero ?
+                <button onClick={() => addHero(id)}>Add Hero</button>
+                :
+
+                <div className='button-wrapper'>
+                    <button className='vote_button' onClick={() => vote(id, 1)}> add a vote </button>
+                    <button className='vote_button' onClick={() => vote(id, -1)}>remove a vote</button>
+                    <button className='delete_button' onClick={() => { deleteHero(id); }} >Delete</button>
+                </div>
+            }
+
+        </div>
     )
 };
 

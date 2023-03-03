@@ -2,10 +2,10 @@ const db = require("../database/connect");
 
 class Hero {
 
-    constructor ({ hero_id, hero_name, hero_description, votes }) {
+    constructor ({ hero_id, api_id, hero_name, votes }) {
         this.id = hero_id;
+        this.api_id = api_id;
         this.name = hero_name;
-        this.description = hero_description;
         this.votes = votes;
     }
 
@@ -31,8 +31,8 @@ class Hero {
     }
 
     static async create(data) {
-        const{hero_name, hero_description} = data;   
-        const response = await db.query('INSERT INTO hero (hero_name, hero_description) VALUES ($1, $2) RETURNING *;', [hero_name, hero_description]);
+        const{api_id, hero_name} = data;   
+        const response = await db.query('INSERT INTO hero (api_id, hero_name) VALUES ($1, $2) RETURNING *;', [api_id, hero_name]);
 
         return response.rows.map(w => new hero(w))
     }

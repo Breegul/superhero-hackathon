@@ -1,10 +1,13 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
+import React, { useState } from 'react'
+import {Routes, Route} from 'react-router-dom'
+import { SearchPage } from '../pages'
 
 function App() {
 
   return (
-    <></>
+    <Routes>
+      <Route path="/search" element={<SearchPage/>}/>
+    </Routes>
   )
 }
 

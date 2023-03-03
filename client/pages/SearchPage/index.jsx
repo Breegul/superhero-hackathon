@@ -32,6 +32,7 @@ const SearchPage = () => {
                 key={e.id} id={e.id} hero_name={e.name} 
                 powerstats={e.powerstats} full_name={e.biography.full-name} 
                 publisher={e.biography.publisher} image={e.image}
+                votes={0}
             />)}
         </div>
     )

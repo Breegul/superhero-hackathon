@@ -1,6 +1,5 @@
 import React, { useState } from 'react'
 import axios from 'axios'
-import { map } from '../../../api/api';
 import HeroCard from '../../components/HeroCard';
 
 const SearchPage = () => {
@@ -30,7 +29,7 @@ const SearchPage = () => {
             </form>
             {loading? "": results.map(e=>
             <HeroCard 
-                id={e.id} hero_name={e.name} 
+                key={e.id} id={e.id} hero_name={e.name} 
                 powerstats={e.powerstats} full_name={e.biography.full-name} 
                 publisher={e.biography.publisher} image={e.image}
             />)}

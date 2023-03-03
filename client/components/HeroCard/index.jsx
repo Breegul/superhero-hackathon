@@ -11,7 +11,9 @@ const HeroCard = ({ id, hero_name, powerstats, full_name, publisher, image, vote
             <p className='hero_name'> {hero_name} </p>
             <div className='power_stats'>
                 <ul>
-                    {powerstats.map((e, i) => (<li key={i}>{e}</li>))}
+                    {powerstats.array.forEach((e) => {
+                        return <li>{e}</li>
+                    })}
                 </ul>
             </div>
             <p className='full_name'> {full_name}</p>

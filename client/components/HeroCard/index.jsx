@@ -1,12 +1,13 @@
 
 import React from 'react';
+import { useHero } from '../../contexts';
 
 
-const HeroCard = ({ id, hero_name, powerstats, full_name, publisher, image, votes, vote, deleteHero }) => {
-
+const HeroCard = ({ id, hero_name, powerstats, full_name, publisher, image, addHero, votes, vote, deleteHero }) => {
+    const {heroes} = useHero();
     let stats = []
 
-    for (e in powerstats) {
+    for (let e in powerstats) {
         stats.push(
             <li>
                 {e}: {powerstats[e]}
@@ -30,9 +31,16 @@ const HeroCard = ({ id, hero_name, powerstats, full_name, publisher, image, vote
             <p className='publisher'> {publisher}</p>
             <p><span className="votes-counter">Votes: {votes}</span></p>
             <img src={image} />
+            {addHero? 
+            <button onClick={()=> addHero(id)}>Add Hero</button>
+            :
+            <>
             <button onClick={() => vote(id, 1)}>+</button>
             <button onClick={() => vote(id, -1)}>-</button>
-            <button onClick={() => { deleteHero(id); }} >Delete</button>
+            <button onClick={() => { deleteHero(id); }} >Delete</button> 
+            </>
+            }
+            
 
         </div>
     )
